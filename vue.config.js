@@ -1,4 +1,4 @@
 module.exports = {
-    publicPath: '/operator/',
-  }
+    publicPath: '/operator/',  // GitHub Pages 上的路徑
+  };
   

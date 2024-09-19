@@ -1,0 +1,73 @@
+.meterGroup {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 8px;
+  margin: 0;
+}
+
+.powerMeter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  background-color: var(--md-sys-color-background);
+  width: 100%;
+}
+.mHTitle {
+  width: 100%;
+  padding: 6px 0;
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: start;
+  font-size: 1.25rem; /* 增加字體大小以提高可讀性 */
+}
+.mBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 16px;
+}
+.mTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+  background-color: var(--md-sys-color-primary-container);
+  border-radius: 16px 16px 0 0;
+}
+
+.chartPage {
+  display: none;
+}
+
+.chartPage.v-show {
+  display: block;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--md-sys-color-outline-variant);
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: var(--md-sys-color-primary-container);
+}

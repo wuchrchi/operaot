@@ -1,0 +1,26 @@
+.chartWall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  padding: 16px;
+  background-color: var(--md-sys-color-background);
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  position: relative; /* 使 carousel 可以相對定位 */
+}
+
+/* 標題的樣式 */
+.chartTitle {
+  width: 100%;
+  padding: 6px 0;
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: start;
+  font-size: 1.25rem; /* 增加字體大小以提高可讀性 */
+}
+.chartContainer {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}

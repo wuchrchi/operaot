@@ -1,0 +1,97 @@
+md-app-drawer {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 8px 0px;
+  background-color: var(--md-sys-color-background);
+  gap: 8px !important;
+  min-width: 232px;
+  min-width: 232px;
+  height: 100%; /* 填滿 .drawer 高度 */
+  overflow: hidden; /* 處理內容溢出 */
+}
+
+
+
+
+
+/* 適用於 Firefox */
+.scrollableContent {
+  scrollbar-width: thin; /* 選項：auto 或 thin */
+  scrollbar-color: var(--md-sys-color-inverse-on-surface) var(--md-sys-color-background); /* 滑塊顏色和軌道顏色 */
+}
+
+
+.scrollableContent::-webkit-scrollbar-button {
+  display: none; /* 隱藏捲動條的箭頭 */
+}
+
+
+.h3Bgc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  background-color: var(--md-sys-color-inverse-on-surface);
+  color: var(--md-sys-color-on-surface-variant);
+}
+.scrollableContent {
+  flex-grow: 1;
+  width: 100%;
+  overflow: auto;
+  padding: 8px;
+}
+.iconPostion{
+  font-size: 24px;
+  position: absolute;
+  right: 8px; /* Position the icon to the right inside the .projectTitle */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the icon */
+}
+.drawerList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: column;
+}
+.fieldName {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.projectField {
+  width: 208px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  align-self: stretch;
+  border-radius: 5px;
+  background-color: var(--md-sys-color-inverse-on-surface);
+}
+.projectTitle {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-height: 24px;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.projectName {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  border-radius: 5px;
+  background-color: var(--md-sys-color-on-primary);
+}

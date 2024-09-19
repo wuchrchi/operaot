@@ -5,7 +5,7 @@ import vuetify from 'vite-plugin-vuetify'
 const path = require('path')
 
 export default defineConfig({
-  base: '/', // 'operator' 是你的 GitHub repo 名稱
+  base: '/operator', // 'operator' 是你的 GitHub repo 名稱
   plugins: [
     vue(),
     vuetify({
@@ -22,6 +22,6 @@ export default defineConfig({
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/operator/'
+    ? '/operator'
     : '/'
 }

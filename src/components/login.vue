@@ -2,7 +2,7 @@
   <div class="light body">
     <header class="title">
       <div class="logo">
-        <img src="../assets/logo.png" alt="Dash Board Demo" class="titleIcon" />
+        <img src="/assets/logo.png" alt="Dash Board Demo" class="titleIcon" />
       </div>
       <h1 class="titleText">Dash Board</h1>
     </header>

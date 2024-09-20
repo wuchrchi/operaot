@@ -2,7 +2,7 @@
      <nav>
       <div class="leadingIcon">
         <div >
-          <img src="../../public/assets/logo.png" alt="logo" class="icon"/>
+          <img src="/public/assets/logo.png" alt="logo" class="icon"/>
         </div>
         <p>您好，使用者</p>
       </div>

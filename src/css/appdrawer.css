@@ -1,4 +1,4 @@
-md-app-drawer {
+.drawer {
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -7,13 +7,9 @@ md-app-drawer {
   background-color: var(--md-sys-color-background);
   gap: 8px !important;
   min-width: 232px;
-  min-width: 232px;
-  height: 100%; /* 填滿 .drawer 高度 */
-  overflow: hidden; /* 處理內容溢出 */
+  height: 100%;
+  overflow: hidden;
 }
-
-
-
 
 
 /* 適用於 Firefox */
@@ -94,4 +90,21 @@ md-app-drawer {
   margin: 0;
   border-radius: 5px;
   background-color: var(--md-sys-color-on-primary);
+}
+/* 小螢幕樣式 */
+@media (max-width:768px) {
+  .drawer {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 8px 0px;
+    background-color: var(--md-sys-color-background);
+    gap: 8px !important;
+    min-width: 232px;
+    height: 100%;
+    overflow: hidden;
+  }
 }

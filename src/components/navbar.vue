@@ -1,35 +1,31 @@
 <template>
-     <nav>
-      <div class="leadingIcon">
-        <div >
-          <img src="assets/logo.png" alt="logo" class="icon"/>
-        </div>
-        <p>您好，使用者</p>
+  <nav>
+    <div class="leadingIcon">
+      <md-icon-button href="#" @click="$emit('toggle-drawer')" class="menuBtn" toggle>
+        <span class="material-symbols-outlined">menu</span>
+      </md-icon-button>
+      <div>
+        <img src="assets/logo.png" alt="logo" class="icon"/>
       </div>
-      <div class="toolBtns light-medium-contras">
-        <md-filled-icon-button href="#" class="">
-          <span class="material-symbols-outlined">apps</span>
-        </md-filled-icon-button>
-        <md-filled-icon-button href="#" class="">
-          <span class="material-symbols-outlined">circle_notifications</span>
-        </md-filled-icon-button>
-        <md-filled-icon-button href="#" class="">
-          <span class="material-symbols-outlined">person</span>
-        </md-filled-icon-button>
-      </div>
-    </nav>
-
+      <p>您好，使用者</p>
+    </div>
+    <div class="toolBtns light-medium-contras">
+      <md-filled-icon-button href="#" class="">
+        <span class="material-symbols-outlined">apps</span>
+      </md-filled-icon-button>
+      <md-filled-icon-button href="#" class="">
+        <span class="material-symbols-outlined">circle_notifications</span>
+      </md-filled-icon-button>
+      <md-filled-icon-button href="#" class="">
+        <span class="material-symbols-outlined">person</span>
+      </md-filled-icon-button>
+    </div>
+  </nav>
 </template>
 
 <script>
-
 export default {
-    name: 'navBar',
-       data() {
-        return {
-        };
-    },
-
+  name: 'navBar',
 };
 </script>
 

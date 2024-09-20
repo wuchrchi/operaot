@@ -14,6 +14,9 @@ nav {
   justify-content: space-between;
 }
 
+.menuBtn {
+  display: none;
+}
 .leadingIcon {
   margin-left: 12px;
   display: flex;
@@ -21,7 +24,7 @@ nav {
   align-items: center;
   gap: 8px;
 }
-.icon{
+.icon {
   width: 48px;
 }
 nav p {
@@ -34,7 +37,6 @@ nav p {
 }
 
 .toolBtns {
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,8 +45,13 @@ nav p {
   margin-right: 8px;
 }
 
-md-filled-icon-button{
-  --_container-color:var(--md-sys-color-surface-dim);
-  --_icon-color:var(--md-sys-color-on-primary-container)
- 
+md-filled-icon-button {
+  --_container-color: var(--md-sys-color-surface-dim);
+  --_icon-color: var(--md-sys-color-on-primary-container);
+}
+
+@media (max-width:768px) {
+  .menuBtn {
+    display: flex;
+  }
 }

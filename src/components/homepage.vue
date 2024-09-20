@@ -1,8 +1,8 @@
 <template>
   <div class="light homeBody">
-    <navBar />
+    <navBar @toggle-drawer="toggleDrawer"/>
     <section class="main">
-      <appDrawer />
+      <appDrawer :isOpen="isDrawerOpen"/>
       <div class="mainContent">
         <section class="rightContent">
           <tvComponents />
@@ -40,7 +40,19 @@ export default {
     mapcomponents,
     controlPanel,
     chartGroup
+  },data() {
+  return {
+    isDrawerOpen: window.innerWidth >= 768, // 預設大螢幕打開抽屜
+  };
+},
+methods: {
+  toggleDrawer() {
+    this.isDrawerOpen = !this.isDrawerOpen;
   },
+  checkScreenSize() {
+    this.isDrawerOpen = window.innerWidth >= 768;
+  },
+},
 
 };
 </script>

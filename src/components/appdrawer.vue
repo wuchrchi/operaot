@@ -1,8 +1,6 @@
-<template>
-    <md-app-drawer md-permanent="full">
-        <!-- Fixed Search field with icon -->
+<template class="">
+    <md-app-drawer v-show="isOpen" class="drawer" md-permanent="full">
         <SearchBar />
-
         <div class="h3Bgc">
             <h3>案場</h3>
         </div>
@@ -33,6 +31,12 @@ export default {
     components: {
         SearchBar,
     },
+    props: {
+        isOpen: {
+            type: Boolean,
+            default: false
+        }
+    },
     data() {
         return {
             data: {
@@ -52,7 +56,7 @@ export default {
 };
 </script>
 
-<style >
+<style>
 @import url(../css/reset.css);
 @import url(../css/m3color.css);
 @import url(../css/appdrawer.css);

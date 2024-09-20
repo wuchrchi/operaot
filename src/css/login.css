@@ -33,7 +33,7 @@ header.title {
   width: 100%;
   gap: 8px;
 }
-header .logo {
+.logo {
   display: flex;
   justify-content: center;
   width: 80px;

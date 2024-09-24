@@ -27,22 +27,32 @@ export default {
         window.addEventListener('resize', this.resizeChart);
     },
     methods: {
-        initChart() {
-            this.chart = echarts.init(this.$refs.chartContainer);
-            const option = {
-                tooltip: { trigger: 'axis' },
-                xAxis: { type: 'category', data: this.timeData },
-                yAxis: { type: 'value' },
-                series: [{ data: this.chartData, type: 'line', symbolSize: 8, radius: '100%', }]
-            };
-            this.chart.setOption(option);
-        },
-        resizeChart() {
-            if (this.chart) {
-                this.chart.resize();
-            }
+    initChart() {
+        this.chart = echarts.init(this.$refs.chartContainer);
+        const option = {
+            tooltip: { trigger: 'axis' },
+            xAxis: {
+                type: 'category',
+                data: this.timeData,
+                            },
+            yAxis: { type: 'value' },
+            series: [{
+                data: this.chartData,
+                type: 'line',
+                symbolSize: 12,
+                areaStyle: {}, // Optional: Use area style to fill under the line
+            }]
+        };
+        this.chart.setOption(option);
+    },
+    resizeChart() {
+        if (this.chart) {
+            this.chart.resize();
         }
     }
+}
+
+
 };
 </script>
 

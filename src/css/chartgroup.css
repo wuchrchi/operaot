@@ -3,29 +3,37 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 30%;
+  height: 50%; /* 調整高度以擴大圖表顯示 */
   padding: 16px;
   background-color: var(--md-sys-color-background);
   border-radius: 10px;
   backdrop-filter: blur(2px);
-  position: relative; /* 使 carousel 可以相對定位 */
+  position: relative;
 }
 
-/* 標題的樣式 */
 .chartTitle {
   width: 100%;
   padding: 6px 0;
   color: var(--md-sys-color-on-surface-variant);
   text-align: start;
-  font-size: 1.25rem; /* 增加字體大小以提高可讀性 */
+  font-size: 1.5rem; /* 調整字體大小 */
 }
-.chartContainer {
 
+.chartContainer {
   width: 100%;
   height: 100%;
+  position: relative;
+  overflow-x: auto; /* 添加水平滾動條 */
+  overflow-y: hidden; /* 隱藏垂直滾動條 */
 }
+
 @media (max-width: 768px) {
-  .chartWall{
+  .chartWall {
     flex-grow: 1;
+    height: 300px; /* 設置固定高度 */
+  }
+  .chartContainer {
+    width: 100%;
+    height: 300px; /* 設置固定高度 */
   }
 }

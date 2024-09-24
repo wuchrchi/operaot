@@ -2,9 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { loadFonts } from "./plugins/webfontloader";
 import vuetify from './plugins/vuetify';
+// router
 import { createRouter, createWebHistory } from 'vue-router';
-import LoginPage from './components/login.vue';
-import HomePage from './components/homepage.vue';
 // material-desgin 套件
 import "@material/web/all"
 import '@material/web/field/filled-field'
@@ -13,6 +12,11 @@ import "material-symbols/outlined.css";
 import "material-symbols/rounded.css";
 import "material-symbols/sharp.css";
 
+import "bootstrap/scss/bootstrap-grid.scss";
+
+// router連結
+import LoginPage from './components/login.vue';
+import HomePage from './components/homepage.vue';
 
 const routes = [
     { path: '/', component: LoginPage },

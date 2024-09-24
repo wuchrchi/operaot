@@ -1,22 +1,28 @@
+.meterWall {
+   height: 25%;
+   margin: 0;
+}
 .meterGroup {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  height: 100%;
+  justify-content: space-between;
   gap: 8px;
-  margin: 0;
-}
+  }
 
 .powerMeter {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2%;
+  padding: 1.5%;
   border-radius: 10px;
   backdrop-filter: blur(2px);
   background-color: var(--md-sys-color-background);
   width: 100%;
 }
+
+
 .mHTitle {
   width: 100%;
   padding: 6px 0;
@@ -33,14 +39,23 @@
   border-radius: 16px;
 }
 .mTitle {
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin: 0;
   background-color: var(--md-sys-color-primary-container);
   border-radius: 16px 16px 0 0;
+}
+.blurContainer {
+  border-radius: 100px;
+  width: 100%;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .chartPage {
@@ -70,4 +85,15 @@
 
 .dot.active {
   background-color: var(--md-sys-color-primary-container);
+}
+@media (max-width: 932px) {
+  .meterWall {
+    height: auto;
+ }
+  .meterGroup {
+    flex-wrap: wrap;
+  }
+  .powerMeter {
+    width: calc(50% - 8px); /* 每行兩個 */
+  }
 }

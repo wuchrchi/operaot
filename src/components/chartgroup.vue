@@ -1,7 +1,7 @@
 <template>
     <div class="chartWall">
         <h3 class="chartTitle">圖錶預覽</h3>
-        <div ref="chartContainer" class="chartContainer"></div>
+        <div ref="chartContainer" class="chartContainer" style="height: 100%;width: 100%;  flex-grow: 1;"></div>
     </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
                 tooltip: { trigger: 'axis' },
                 xAxis: { type: 'category', data: this.timeData },
                 yAxis: { type: 'value' },
-                series: [{ data: this.chartData, type: 'line', symbolSize: 8 }]
+                series: [{ data: this.chartData, type: 'line', symbolSize: 8, radius: '100%', }]
             };
             this.chart.setOption(option);
         },

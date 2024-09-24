@@ -1,18 +1,44 @@
-.alertBox {
+/* tvWall 容器的樣式 */
+.alarmWall {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  border-radius: 16px;
-  overflow-y: auto; /* 只在垂直方向顯示滾動條 */
+  height: 45%;
+  padding: 16px;
+  background-color: var(--md-sys-color-background);
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  position: relative;
+  overflow: hidden;
 }
 
+/* 標題的樣式 */
+.alarmTitle {
+  width: 100%;
+  padding: 2px 0;
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: start;
+  font-size: 1.25rem; /* 增加字體大小以提高可讀性 */
+}
+.alertBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  overflow-y: hidden; /* 只在垂直方向顯示滾動條 */
+}
+.scrollableContent.alarm {
+  height: calc(100%-48px);
+}
 .alertHeader {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 64px;
+  height: 48px;
   align-items: center;
   align-self: stretch;
   justify-content: space-between;
@@ -25,16 +51,11 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  height: 64px;
   flex: 1 0 0;
   align-self: stretch;
+  font-size: 1.25rem;
 }
 
-.scrollableContent {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-}
 .alertItem {
   width: 100%;
   height: 64px; /* 固定每個項目的高度 */
@@ -64,7 +85,16 @@
 }
 
 md-filled-button.basicBtn.details {
-  min-width: 132px;
   --_container-color: var(--md-sys-color-outline);
   --_label-text-color: var(--md-sys-color-on-primary);
+}
+
+@media (max-width: 768px) {
+  .alarmWall {
+    flex-grow: 1;
+  }
+  .scrollableContent.alarm {
+    max-height: calc(64px * 3); /* 限制最大顯示 3 行，每行高度為 64px */
+    overflow-y: scroll; /* 讓內容可滾動 */
+  }
 }

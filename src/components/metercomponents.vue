@@ -1,19 +1,35 @@
 <template>
-    <div ref="chartContainer" style="width: 100%; height: 15vh;"></div>
+    <div ref="chartContainer" style=" border-radius: 100px;
+    border: none;
+    width: 100%;
+    height: 15vh;"></div>
 </template>
 
 <script>
 import * as echarts from 'echarts';
 
 export default {
-    name: 'metertComponents',
+    name: 'meterComponents',
     props: ['min', 'max', 'value'],
     mounted() {
         this.initChart();
+        window.addEventListener('resize', this.resizeChart);
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.resizeChart);
     },
     methods: {
         initChart() {
-            const chart = echarts.init(this.$refs.chartContainer);
+            this.chart = echarts.init(this.$refs.chartContainer);
+            this.setChartOptions();
+        },
+        setChartOptions() {
+            const containerWidth = this.$refs.chartContainer.clientWidth;
+            const containerHeight = this.$refs.chartContainer.clientHeight;
+
+            // 依據容器大小自動調整字體大小
+            const fontSize = Math.max(12, Math.min(containerWidth, containerHeight) / 20);
+
             const option = {
                 backgroundColor: 'transparent',
                 tooltip: {
@@ -40,7 +56,7 @@ export default {
                         axisTick: { show: false },
                         detail: {
                             formatter: '{value} V',
-                            fontSize: 16,
+                            fontSize: fontSize, // 動態設置字體大小
                             offsetCenter: [0, '60%'],
                             color: '#00210C'
                         },
@@ -62,8 +78,18 @@ export default {
                     }
                 ]
             };
-            chart.setOption(option);
+
+            // 設置圖表選項
+            this.chart.setOption(option);
+        },
+        resizeChart() {
+            if (this.chart) {
+                // 重新設置圖表選項並調整大小
+                this.setChartOptions();
+                this.chart.resize();
+            }
         }
     }
 };
 </script>
+<style></style>

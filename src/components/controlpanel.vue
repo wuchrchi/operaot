@@ -61,11 +61,16 @@ export default {
             this.secondLineAlerts.forEach((_, index) => {
                 this.initChart(index, 'chartSecond-');
             });
+            window.addEventListener('resize', this.resizeCharts);
         });
+    },
+    beforeUnmount() {
+        // 移除事件監聽器
+        window.removeEventListener('resize', this.resizeCharts);
     },
     methods: {
         initChart(index, chartPrefix) {
-            const chartElement = this.$refs[`${chartPrefix}${index}`][0]; // 根據動態 ref 獲取 DOM 元素
+            const chartElement = this.$refs[`${chartPrefix}${index}`][0];
             const alertValue = chartPrefix === 'chartFirst-' ? this.firstLineAlerts[index].value : this.secondLineAlerts[index].value;
 
             const option = {
@@ -111,16 +116,31 @@ export default {
 
             const chart = echarts.init(chartElement);
             chart.setOption(option);
+
+            // Instead of using this.$set, assign the chart directly
+            this.$data[`${chartPrefix}${index}Chart`] = chart;
         },
-        viewDetails(alert) {
-            console.log("查看詳情: ", alert);
-            // 添加查看詳情邏輯
-        },
-    },
-};
+
+        resizeCharts() {
+            // 遍歷所有圖表並調用 resize
+            this.firstLineAlerts.forEach((_, index) => {
+                const chart = this.$data[`chartFirst-${index}Chart`];
+                if (chart) {
+                    chart.resize();
+                }
+            });
+            this.secondLineAlerts.forEach((_, index) => {
+                const chart = this.$data[`chartSecond-${index}Chart`];
+                if (chart) {
+                    chart.resize();
+                }
+            });
+        }
+    }
+}
 </script>
 
-<style >
+<style>
 @import url(../css/m3color.css);
 @import url(../css/controlpanel.css);
 </style>

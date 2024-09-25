@@ -39,7 +39,7 @@ export default {
             series: [{
                 data: this.chartData,
                 type: 'line',
-                symbolSize: 12,
+                symbolSize: 1,
                 areaStyle: {}, // Optional: Use area style to fill under the line
             }]
         };

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 50%; /* 調整高度以擴大圖表顯示 */
+  height: 30%; 
   padding: 16px;
   background-color: var(--md-sys-color-background);
   border-radius: 10px;
@@ -13,10 +13,10 @@
 
 .chartTitle {
   width: 100%;
-  padding: 6px 0;
+  padding: 2px 0;
   color: var(--md-sys-color-on-surface-variant);
   text-align: start;
-  font-size: 1.5rem; /* 調整字體大小 */
+  font-size: 1.5rem; 
 }
 
 .chartContainer {
@@ -26,14 +26,14 @@
   overflow-x: auto; /* 添加水平滾動條 */
   overflow-y: hidden; /* 隱藏垂直滾動條 */
 }
+.chartContainer canvas{
+  height: 100% !important;
+}
 
-@media (max-width: 768px) {
+@media (max-width: 972px) {
   .chartWall {
-    flex-grow: 1;
-    height: 300px; /* 設置固定高度 */
+  
+    height:auto;
   }
-  .chartContainer {
-    width: 100%;
-    height: 300px; /* 設置固定高度 */
-  }
+  
 }

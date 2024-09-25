@@ -1,6 +1,6 @@
 <template>
     <div class="mointerWall">
-        <h3 class="tvTitle">監視</h3>
+        <h3 class="mointerHead">監視</h3>
         <div class="mointerGp">
             <div class="firstLinegp">
                 <div v-for="(alert, index) in firstLineAlerts" :key="index" class="mointer">

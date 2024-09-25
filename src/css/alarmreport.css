@@ -19,7 +19,7 @@
   padding: 2px 0;
   color: var(--md-sys-color-on-surface-variant);
   text-align: start;
-  font-size: 1.25rem; /* 增加字體大小以提高可讀性 */
+  font-size: 1.5rem; 
 }
 .alertBox {
   height: 100%;

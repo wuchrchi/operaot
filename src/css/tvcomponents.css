@@ -15,10 +15,10 @@
 /* 標題的樣式 */
 .tvTitle {
   width: 100%;
-  padding: 6px 0;
+  padding: 2px 0;
   color: var(--md-sys-color-on-surface-variant);
   text-align: start;
-  font-size: 1.25rem; /* 增加字體大小以提高可讀性 */
+  font-size: 1.5rem; 
 }
 
 /* carousel 的樣式 */

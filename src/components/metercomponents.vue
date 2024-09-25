@@ -2,7 +2,7 @@
     <div ref="chartContainer" style=" border-radius: 100px;
     border: none;
     width: 100%;
-    height: 15vh;"></div>
+    height: 17vh;"></div>
 </template>
 
 <script>
@@ -53,10 +53,13 @@ export default {
                                 ]
                             }
                         },
+                        axisLabel:{
+                            fontSize: fontSize,
+                        },
                         axisTick: { show: false },
                         detail: {
                             formatter: '{value} V',
-                            fontSize: fontSize, // 動態設置字體大小
+                            fontSize: fontSize, 
                             offsetCenter: [0, '60%'],
                             color: '#00210C'
                         },

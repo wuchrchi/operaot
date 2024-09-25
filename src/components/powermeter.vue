@@ -9,14 +9,13 @@
                         <meterComponents :min="config.min" :max="config.max" :value="config.value" />
                     </div>
                 </div>
-                <div class="dots">
-                    <span v-for="(section, index) in sections" :key="index" class="dot"
-                        :class="{ active: currentIndex === index }" @click="currentIndex = index"></span>
-                </div>
             </div>
+     
         </section>
+       
     </div>
 </template>
+
 
 <script>
 import meterComponents from './metercomponents.vue';
@@ -29,12 +28,25 @@ export default {
             chartConfigs: [
                 { title: '電壓錶', subtitle: '電錶 1', min: 0, max: 400, value: 100 },
                 { title: '電壓錶', subtitle: '電錶 2', min: 0, max: 400, value: 250 },
-                { title: '電壓錶', subtitle: '電錶 2', min: 0, max: 400, value: 250 },
-                { title: '電壓錶', subtitle: '電錶 2', min: 0, max: 400, value: 250 },
+                { title: '電壓錶', subtitle: '電錶 3', min: 0, max: 400, value: 250 },
+                { title: '電壓錶', subtitle: '電錶 4', min: 0, max: 400, value: 250 },
             ]
         };
+    },
+    mounted() {
+        this.scrollToFirstMeter();
+    },
+    methods: {
+        scrollToFirstMeter() {
+            // 尋找第一個 .powerMeter 並滾動到該元素
+            const firstMeter = this.$el.querySelector('.powerMeter');
+            if (firstMeter) {
+                firstMeter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
     }
 };
+
 </script>
 
 <style>

@@ -1,7 +1,7 @@
 <template>
     <div class="chartWall">
         <h3 class="chartTitle">圖錶預覽</h3>
-        <div ref="chartContainer" class="chartContainer" style="height: 100%;width: 100%;  flex-grow: 1;"></div>
+        <div ref="chartContainer" class="chartContainer" style="height: 25vh;width: 100%;  flex-grow: 1;"></div>
     </div>
 </template>
 
